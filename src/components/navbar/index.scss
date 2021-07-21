@@ -1,0 +1,60 @@
+@import '../sass/variables.scss';
+@import '../sass/mixins.scss';
+
+#navbar {
+    padding-left: 3.541666666666667vw;
+    padding-right: 3.541666666666667vw;
+
+    padding-top: (50px/$divider);
+    @include mq($xls){
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 15px;
+    }
+
+    .logo {
+        svg {
+            height: (55.28px/$divider);
+        }
+    }
+
+    .links {
+        height: (55.28px/$divider);
+        display: grid;
+        place-items: center;
+        @include mq($xls){
+            display: none;
+        }
+
+        span {
+            font-family: $poppins_thin;
+            font-weight: normal;
+            font-size: (24px/$divider);
+            text-align: left;
+            line-height: 1;
+            color: $white_color;
+            padding-right: (69px/$divider);
+            transition: all ease-out 0.5s;
+
+            &:nth-child(3) {
+                padding-left: 0px;
+            }
+            &:hover{
+                font-weight: 900;
+                color:$green;
+            }
+        }
+        a{
+           text-decoration:none ;
+        }
+
+
+    }
+
+    .menu {
+        svg {
+
+            height: (55.28px/$divider);
+        }
+    }
+}

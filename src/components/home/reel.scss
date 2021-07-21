@@ -1,0 +1,42 @@
+@import "../sass/variables.scss";
+@import "../sass/mixins.scss";
+#reel{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    @include transition;
+    .circle-1,
+    .circle-2 {
+        width: (258px/$divider);
+        height: (258px/$divider);
+        background: transparent;
+        border: 2px solid rgba($color: $white-color, $alpha: .31);
+        display: grid;
+        place-items: center;
+
+    }
+    .circle-2{
+        width: (258px/$divider);
+        height: ((258px/$divider)/2);
+        /* as the half of the width */
+        border-top-left-radius: 110px;
+        border-top-right-radius: 110px;
+        border: 2px solid $white_color;
+        border-bottom: 0;
+        position: absolute;
+        top:0;
+    }
+    .image{
+        min-width: (194px/$divider);
+        min-height: (194px/$divider);
+        background-image: url("https://res.cloudinary.com/dbkjsfg3t/image/upload/v1626851646/guezagency/home/480ea6100685171.5f0e2ed1d0a6c_cjhva6.jpg");
+        @include background;
+        position: absolute;
+        top:0;
+    }
+    .video-circle {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

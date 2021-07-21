@@ -1,0 +1,238 @@
+@import "variables";
+@mixin card {
+    border-radius: 18px;
+    background-color: $black_ligtened;
+    box-shadow: 0px 3px 5px #000000;
+    transition: all 0.5s ease-out;
+    &:hover{
+      background-color: lighten($color: $black_ligtened, $amount: 6);
+      // transform: scale(1.1);
+      @include mq($xls){
+        transform: scale(1);
+      }
+    }
+}
+@mixin background{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin transition{
+  transition: all ease-out 0.3s;
+}
+@mixin center{
+  place-items: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@mixin title_text {
+    font-family:$bold_poppins;
+    font-size:19.5px;
+    color:$white_color;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    .underline{
+        width:62px;
+        height:2px;
+        background-color: $blue_color;
+    }
+}
+@mixin centered-card-content{
+    padding-left: 32px;
+    padding-right: 32px;
+    @include mq($xxs){
+          padding-left: 10px;
+          padding-right: 10px;
+    }
+}
+@mixin in_btn_space{
+    margin-top:20px;
+    margin-bottom: 20px;
+     @media screen and (max-width:500px) {
+       margin-top:10px;
+       margin-bottom: 10px;
+     }
+     @include mq($xxs){
+       margin-top:5px;
+       margin-bottom: 5px;
+
+     }
+}
+@mixin button{
+    @include in_btn_space;
+    border-style: solid;
+    border-width:2px;
+    border-radius:4px;
+    border-color: $blue_color;
+    color:$white_color;
+    font-family: $bold_poppins;
+    font-size:14px;
+    &:hover{
+      border-color:lighten($blue_color,15);
+    }
+
+}
+@mixin project-image($image_src){
+         video{
+             min-height:50vh;
+             width:auto;
+             max-width:100%;
+             border-radius:18px;
+             @include mq($xls) {
+               filter: grayscale(0%);
+             }
+         }
+         img{
+             min-height:50vh;
+             width:auto;
+             max-width:100%;
+            // width:100%;
+            height:auto;
+             border-radius:18px;
+            //  filter:grayscale(100%);
+             transition:filter 1s;
+            @include mq($xls){
+              filter:grayscale(0%);
+            }
+             &:hover{
+               filter:grayscale(0%);
+             }
+         }
+         .back-img{
+            min-height:50vh;
+            width:auto;
+            // max-width:100%;
+            // width:100%;
+            height:auto;
+            border-radius:18px;
+            // filter:grayscale(100%);
+            @include mq($xls) {
+              filter: grayscale(0%);
+            }
+            &:hover {
+                filter: grayscale(0%);
+            }
+         }
+         @include mq($xlg) {
+           video {
+             min-height: 57vw;
+           }
+
+           img {
+             min-height: 57vw;
+           }
+
+           .back-img {
+             min-height: 34vw;
+           }
+         }
+         @include mq($lg) {
+           video {
+             min-height: 57vw;
+           }
+
+           img {
+             min-height: 57vw;
+           }
+
+           .back-img {
+             min-height: 57vw;
+           }
+         }
+         @include mq($xls){
+           video{
+             min-height:129vw;
+           }
+           img{
+             min-height:129vw;
+           }
+           .back-img {
+             min-height:129vw;
+           }
+         }
+
+
+}
+@mixin poppins-regular-16{
+    font-family: $poppins_regular;
+    font-size:16px;
+    color:$gray_color;
+}
+@mixin poppins-regular-16-white{
+    font-family: $poppins_regular;
+    font-size:16px;
+    color:$white_color;
+}
+@mixin mq($size){
+    @media screen and (max-width:$size){
+        @content;
+    }
+}
+@mixin mqh($size){
+    @media screen and (max-height:$size){
+        @content;
+    }
+}
+@mixin container{
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    @include mq(600px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    @include mq($md) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .center-content {
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    width:100%;
+}
+@mixin  hover {
+   &:hover {
+       background-color: lighten($color: $blue_color, $amount: 10);
+       color: white;
+    //    box-shadow: 0px 3px 5px #000000;
+   }
+}
+@mixin header-layout{
+    @include mq($xxlg) {
+        min-height: $headervh;
+        max-height: $headervh;
+        height:$headervh;
+
+        // min-height:$headervh;
+        // background-color:white;
+    }
+    @include mq($xlg) {
+        min-height: 100vh;
+        max-height: 100vh;
+        height:100vh;
+        // min-height:$headervh;
+        // background-color:white;
+    }
+}
+
+@mixin grid($cols, $margin) {
+  -ms-flex: 0 0 (100%/($cols+$margin));
+  flex: 0 0 (100%/($cols+$margin));
+  max-width: (100%/($cols+$margin));
+  margin-right: ((100%/$cols)-(100%/($cols+$margin)));
+  margin-top: ((100%/$cols)-(100%/($cols+$margin)));
+
+  @include mq($xls) {
+    margin-top: 12%;
+  }
+}

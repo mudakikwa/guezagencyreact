@@ -1,0 +1,8 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "./components/sass/variables.scss";
+@import "./components/sass/mixins.scss";
+@import "./components/fonts/font.scss";
+
+body{
+  background-color: #000;
+}
