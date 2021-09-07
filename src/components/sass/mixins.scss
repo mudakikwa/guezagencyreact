@@ -17,6 +17,9 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+@mixin pxtoem($size){
+  font-size: (32 / 16) * 1em;
+}
 @mixin transition{
   transition: all ease-out 0.3s;
 }

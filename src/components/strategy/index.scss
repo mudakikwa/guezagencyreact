@@ -1,0 +1,166 @@
+@import "../sass/mixins.scss";
+#strategy{
+    position: absolute;
+    top:100vh;
+    min-height: 100vh;
+    min-width: 100%;
+    padding-left:$body-padding;
+    padding-top: (50/$em-base)*1em;
+    padding-bottom: (50/$em-base)*1em;
+    padding-right: (100px/$divider);
+    .all-strategy-items{
+        min-height: calc(100vh - 50px);
+        display: grid;
+        align-content: space-between;
+    }
+    .strategy-wrapper{
+        min-width: 100%;
+        display: grid;
+        justify-content: space-between;
+    }
+    .section-title{
+        .numbering{
+            font-family: $graphiksemibold;
+            font-weight: 600;
+            font-size: (16.67px/$divider);
+            text-align: left;
+            color: $green;
+            padding-right:(21px/$divider);
+        }
+        .title{
+            font-family: $graphikbold;
+            font-weight: bold;
+            font-size: (57px/$divider);
+            text-align: left;
+            color: $white_color;
+            margin-bottom: (33px/$divider);
+            line-height: 1;
+        }
+        .title-desc {
+            width: 300px;
+            background: transparent;
+            font-family: $graphiklight;
+            font-weight: 300;
+            font-size: (18px/$divider);
+            line-height: (28.8px/$divider);
+            text-align: left;
+            color: $white_color;
+            opacity: 0.67;
+
+
+        }
+        .the-single-strategy{
+            .strategy-title{
+                @extend .title;
+                background: linear-gradient(#e1efe6 0%, rgba(113, 120, 115, 0) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1;
+                font-size: (100px/$divider);
+            }
+            .description{
+                @extend .title-desc;
+                width:(531px/$divider);
+                margin-bottom: (30px/$divider);
+            }
+            .learn-more-btn{
+                width: 295px;
+                height: (61px/$divider);
+                border-radius: 30.5px;
+                background: transparent;
+                border: 2px solid $white_color;
+                display: grid;
+                place-items: center;
+                font-family: $graphiklight;
+                font-weight: 300;
+                font-size: (18px/$divider);
+                line-height: 1;
+                text-align: left;
+                color: $white_color;
+                img{
+                    margin-left: (28px/$divider);
+                    width: (21px/$divider);
+                    background: transparent;
+                }
+            }
+        }
+        .other-services{
+            font-family: $graphiklight;
+            font-weight: 300;
+            font-size: (18px/$divider);
+            line-height: (28.8px/$divider);
+            text-align: left;
+            color: $white_color;
+            max-width: 115px;
+            .line{
+                margin-top: (7.5px/$divider);
+                .line-1{
+                    width:50%;
+                    height:1px;
+                    background-color: $green;
+                } 
+                .line-2{
+                    width:50%;
+                    height:1px;
+                    background-color: $white_color;
+                }
+            }
+
+        }
+        .all-strategy{
+            margin-top: (22.5px/$divider);
+            img{
+                height:(59px/$divider);
+                width: auto;
+                margin-right: 44px/$divider;
+            }
+        }
+    }
+    .left-size-content{
+        .strategy-img{
+            display: grid;
+            place-items: center;
+            border-radius: (25px/$divider);
+            max-height: calc(100vh - 60px);
+            overflow-y: hidden;
+            .startegy-real-img{
+                min-height: calc(100vh - 60px);
+                min-width:31.97916666666667vw;
+                border-radius: (25px/$divider);
+                background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ce8e88114576531.603e176863331.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .lines{
+                position: absolute;
+                z-index: -100;
+                top:0;
+                min-width:31.97916666666667vw;
+                display: grid;
+                place-items: center;
+                .line-1{
+                    width:5px;
+                    height: calc(100vh + 50px);
+                    background-color: $white_color;
+                    margin-right: (20px/$divider);
+                    &:last-child{
+                        margin-right: (0px/$divider);
+                    }
+                }
+            }
+            .strategy-number{
+                font-size:60vh;
+                font-family: $graphiksuper;
+                font-weight: 600;
+                text-align: left;
+                color: rgba($color: #000000, $alpha: .0);
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $white_color;
+                position: absolute;
+                z-index: -1;
+                transform: translateX(-10vw);
+            }
+        }
+    }
+}
